@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mustat Renkaat - Renkaiden haku</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <nav class="navbar">
+        <a href="#" class="logo-link">
+          <img src="img/logo_dark.svg" alt="logo" />
+        </a>
+        <ul class="navbar-links">
+          <li><a href="#">Etusivu</a></li>
+          <li><a href="#">Renkaanvaihto</a></li>
+          <li><a href="#">Yritys</a></li>
+          <li><a href="#">Yhteystiedot</a></li>
+        </ul>
+      </nav>
+
+      <div class="etusivu">
+        <h3>Rengaskauppa vuodesta 1999</h3>
+        <h1>Mustat Renkaat</h1>
+        <button class="button1">Verkkokauppa</button>
+        <button class="button2">Ota yhteyttä</button>
+
+        <img
+          src="img/rengaskuvat/ES31-kesärengas-HA.png"
+          alt="rengaskuva"
+          height="600"
+        />
+      </div>
+
+      <div class="content">
+        <h2>Rengashaku</h2>
+        <form action="search.php" method="post">
+          <label for="renkaanKoko">Valitse renkaan koko:</label>
+          <select name="renkaanKoko" id="renkaanKoko">
+            <option value="165/55-14">165/55-14</option>
+            <option value="165/55-15">165/55-15</option>
+            <option value="165/65-14">165/65-14</option>
+            <option value="165/65-15">165/65-15</option>
+            <option value="175/55-14">175/55-14</option>
+            <option value="175/55-15">175/55-15</option>
+            <option value="175/65-14">175/65-14</option>
+            <option value="175/65-15">175/65-15</option>
+            <option value="185/55-14">185/55-14</option>
+            <option value="185/55-15">185/55-15</option>
+            <option value="185/65-14">185/65-14</option>
+            <option value="185/65-15">185/65-15</option>
+            <option value="195/55-15">155/55-15</option>
+            <option value="195/65-15">195/65-15</option>
+            <option value="205/55-16">205/55-16</option>
+            <option value="205/65-16">205/65-16</option>
+            <option value="225/55-18">225/55-18</option>
+            <option value="235/60-17">235/60-17</option>
+            <option value="235/60-18">235/60-18</option>
+            <option value="235/65-17">235/65-17</option>
+            <option value="235/65-18">235/65-18</option>
+            <option value="255/50-19">255/50-19</option>
+          </select>
+          <br />
+          <label for="renkaanTyyppi">Valitse renkaan tyyppi:</label>
+          <select name="renkaanTyyppi" id="renkaanTyyppi">
+            <option value="kesä">Kesärenkaat</option>
+            <option value="talvi">Talvirenkaat</option>
+          </select>
+          <br />
+          <input type="submit" value="Hae renkaita" />
+          <br />
+        </form>
+
+        <main>
+          <section id="renkaat">
+            <!-- Tähän tulee PHP:n generoima tieto hakutuloksista -->
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <footer>
+      <div class="logo">
+        <img src="img/logo_dark.svg" alt="logo" />
+      </div>
+      <div class="tiedot">
+        <p>Mustapään Auto Oy</p>
+        <p>Kosteenkatu 1, 86300 Oulainen</p>
+        <p>Puh. 040-7128158</p>
+        <p>Email: myyntimies@mustatrenkaat.net</p>
+      </div>
+    </footer>
+  </body>
+</html>

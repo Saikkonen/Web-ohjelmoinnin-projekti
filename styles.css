@@ -1,0 +1,121 @@
+:root {
+  --pink: #F205B3;
+  --grey: #012326;
+  --green: #034001;
+  --dark-blue: #012840;
+  --blue: #023059;
+}
+
+body {
+  font-family: 'Racing Sans One', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 24px;
+  font-family: 'Racing Sans One', sans-serif;
+}
+
+h2 {
+  font-size: 18px;
+  font-family: 'Racing Sans One', sans-serif;
+}
+
+h3 {
+  font-size: 16px;
+  font-family: 'Racing Sans One', sans-serif;
+}
+
+p {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+}
+
+nav {
+  background-color: var(--grey);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  overflow: hidden;
+}
+
+nav img {
+  height: 100px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav li {
+  padding: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+nav a:hover {
+  color: var(--pink);
+}
+
+.etusivu {
+  min-height: 100vh;
+  margin-top: 25vh;
+  margin-left: 20vw;
+}
+
+.etusivu h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 100px;
+}
+
+.etusivu h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+.etusivu img {
+  position: absolute;
+  left: 60vw;
+  top: 25vh;
+}
+
+.etusivu button {
+  border: 2px solid black;
+  border-radius: 14px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button1 {
+  background-color: var(--blue);
+}
+
+.button2 {
+  background-color: var(--dark-blue);
+}
+
+.content {
+  min-height: 100vh;
+}
+
+footer {
+  background-color: var(--grey);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
