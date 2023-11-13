@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
   </head>
   <body>
     <div class="page">
@@ -40,7 +41,7 @@
 
       <div class="content">
         <h2>Rengashaku</h2>
-        <form action="search.php" method="post">
+        <form>
           <label for="renkaanKoko">Valitse renkaan koko:</label>
           <select name="renkaanKoko" id="renkaanKoko">
             <option value="Kaikki">Kaikki</option>
@@ -76,7 +77,7 @@
             <option value="Kitka">Kitkarenkaat</option>
           </select>
           <br />
-          <input type="submit" value="Hae renkaita" />
+          <button type="button" onclick="haeRenkaat()">Hae renkaita</button>
           <br />
         </form>
 
