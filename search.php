@@ -25,7 +25,16 @@
     }
 
     // Tee SQL-kysely hakua varten
-    $sql = "SELECT * FROM renkaat WHERE Koko = '$renkaanKoko' AND Tyyppi = '$renkaanTyyppi'";
+    $sql = "SELECT * FROM renkaat WHERE 1";
+
+    if ($renkaanKoko != "Kaikki") {
+      $sql .= " AND Koko = '$renkaanKoko'";
+    }
+
+    if ($renkaanTyyppi != "Kaikki") {
+      $sql .= " AND Tyyppi = '$renkaanTyyppi'";
+    }
+
     $result = $yhteys->query($sql);
 
     if ($result->num_rows > 0) {
