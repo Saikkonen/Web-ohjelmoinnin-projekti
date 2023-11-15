@@ -13,3 +13,9 @@ function haeRenkaat() {
   }
   xhr.send('renkaanKoko=' + koko + '&renkaanTyyppi=' + tyyppi)
 }
+
+function scrollToElement(element) {
+  var element = document.getElementById(element)
+
+  element.scrollIntoView({ behavior: 'smooth' })
+}
