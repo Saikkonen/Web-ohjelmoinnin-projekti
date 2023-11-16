@@ -15,8 +15,8 @@
   <body>
     <div class="page">
       <nav class="navbar">
-        <a href="#" class="logo-link">
-          <img src="img/logo_dark.svg" alt="logo" />
+        <a href="" class="logo-link">
+          <img src="img/logo_dark.svg" class="unselectable" alt="logo" />
         </a>
         <ul class="navbar-links">
           <li><a href="">Etusivu</a></li>
@@ -31,20 +31,27 @@
         <button onclick="scrollToElement('rengashaku')" class="button">
           Verkkokauppa
         </button>
-        <button class="button">Ota yhteyttä</button>
+        <button
+          onclick="location.href='yhteystiedot.html'"
+          class="button"
+          type="button"
+        >
+          Ota yhteyttä
+        </button>
 
         <img
           src="img/rengaskuvat/ES31-kesärengas-HA.png"
           alt="rengaskuva"
           height="600"
+          class="unselectable"
         />
       </div>
 
-      <div class="content" id="rengashaku">
-        <h2>Rengashaku</h2>
-        <form>
+      <div class="content verkkokauppa" id="rengashaku">
+        <form class="search-form">
+          <h1 class="page-title">Rengashaku</h1>
           <label for="renkaanKoko">Valitse renkaan koko:</label>
-          <select name="renkaanKoko" id="renkaanKoko">
+          <select name="renkaanKoko" id="renkaanKoko" class="select-box">
             <option value="Kaikki">Kaikki</option>
             <option value="165/55-14">165/55-14</option>
             <option value="165/55-15">165/55-15</option>
@@ -71,14 +78,16 @@
           </select>
           <br />
           <label for="renkaanTyyppi">Valitse renkaan tyyppi:</label>
-          <select name="renkaanTyyppi" id="renkaanTyyppi">
+          <select name="renkaanTyyppi" id="renkaanTyyppi" class="select-box">
             <option value="Kaikki">Kaikki</option>
             <option value="Kesä">Kesärenkaat</option>
             <option value="Nasta">Nastarenkaat</option>
             <option value="Kitka">Kitkarenkaat</option>
           </select>
           <br />
-          <button type="button" onclick="haeRenkaat()">Hae renkaita</button>
+          <button type="button" onclick="haeRenkaat()" class="search-button">
+            Hae renkaita
+          </button>
           <br />
         </form>
 
