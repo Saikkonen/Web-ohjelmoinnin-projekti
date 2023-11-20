@@ -17,7 +17,6 @@ function haeRenkaat() {
 
 function paivitaSivu(renkaat) {
   var tuloksetDiv = document.getElementById('renkaat')
-  console.log(renkaat)
   tuloksetDiv.innerHTML = '' // Tyhjennä nykyiset tulokset
 
   if (renkaat.length > 0) {
@@ -25,11 +24,31 @@ function paivitaSivu(renkaat) {
       var renkaanDiv = document.createElement('div')
       renkaanDiv.classList.add('renkaan-tiedot')
 
-      for (var avain in renkaat[i]) {
-        var pElementti = document.createElement('p')
-        pElementti.innerHTML = avain + ': ' + renkaat[i][avain]
-        renkaanDiv.appendChild(pElementti)
-      }
+      // Renkaan merkki ja malli <p> tägiin
+      var merkkiJaMalli = document.createElement('p')
+      merkkiJaMalli.innerHTML = renkaat[i].Merkki + ' ' + renkaat[i].Malli
+      renkaanDiv.appendChild(merkkiJaMalli)
+
+      // Renkaan tyyppi <p> tägiin
+      var tyyppi = document.createElement('p')
+      tyyppi.innerHTML = renkaat[i].Tyyppi + 'renkaat'
+      renkaanDiv.appendChild(tyyppi)
+
+      // Renkaan koko <p> tägiin
+      var koko = document.createElement('p')
+      koko.innerHTML = renkaat[i].Koko
+      renkaanDiv.appendChild(koko)
+
+      // Renkaan hinta <p> tägiin
+      var hinta = document.createElement('p')
+      hinta.innerHTML = renkaat[i].Hinta + ' €'
+      renkaanDiv.appendChild(hinta)
+
+      // Renkaan kuva <img> tägiin
+      var kuva = document.createElement('img')
+      kuva.src = 'img/rengaskuvat/ES31-kesärengas-HA.png'
+      kuva.width = 100
+      renkaanDiv.appendChild(kuva)
 
       tuloksetDiv.appendChild(renkaanDiv)
     }
