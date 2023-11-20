@@ -49,8 +49,8 @@ function paivitaSivu(renkaat) {
 
       // Renkaan kuva <img> tägiin
       var kuva = document.createElement('img')
-      kuva.src = 'img/rengaskuvat/ES31-kesärengas-HA.png'
-      kuva.width = 100
+      kuva.classList.add('tuotekuva')
+      kuva.src = 'img/rengaskuvat/' + getImageName(renkaat[i].Malli) + '.png'
       renkaanDiv.appendChild(kuva)
 
       tuloksetDiv.appendChild(renkaanDiv)
@@ -58,6 +58,50 @@ function paivitaSivu(renkaat) {
   } else {
     tuloksetDiv.innerHTML = 'Ei hakutuloksia'
   }
+}
+
+// Tehtävänannossa oli todella huonot kuvat niin tein näin
+function getImageName(image) {
+  let result
+  switch (image) {
+    case 'Hakkapeliitta 8':
+      result = 'Nokian_Hakka_Black'
+      break
+    case 'Hakkapeliitta 8 SUV':
+      result = 'Nokian_Hakka_Green_3'
+      break
+    case 'Hakkapeliitta 9':
+      result = 'Nokian_Hakkapeliitta_9'
+      break
+    case 'Hakkapeliitta R3':
+      result = 'Nokian_Hakka_Green_3'
+      break
+    case 'Wi31+':
+      result = 'Kumho-Wi31UUSI'
+      break
+    case 'WS71':
+      result = 'WinterCraft-SUV-ice-WS51'
+      break
+    case 'RW11':
+      result = 'HK_RW11'
+      break
+    case 'K125':
+      result = 'HK_K125_L'
+      break
+    case 'Ventus Prime 3 K125':
+      result = 'HK_K125_L'
+      break
+    case 'Nordman RS2':
+      result = 'Nokian_Nordman_RS_'
+      break
+    case 'Ecowing ES-31':
+      result = 'ES31-kesärengas-HA'
+      break
+    default:
+      result = 'default'
+      break
+  }
+  return result
 }
 
 function scrollToElement(element) {

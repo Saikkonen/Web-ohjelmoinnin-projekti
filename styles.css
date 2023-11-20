@@ -219,6 +219,12 @@ tr:hover {
   justify-content: space-between;
 }
 
+.tuotekuva {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+}
+
 @media screen and (max-width: 576px) {
   .etusivu img {
     display: none;
