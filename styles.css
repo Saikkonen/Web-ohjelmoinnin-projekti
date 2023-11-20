@@ -201,6 +201,50 @@ tr:hover {
   -ms-user-select: none;
 }
 
+#renkaat {
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .renkaan-tiedot {
-  color: white;
+  box-sizing: border-box;
+  text-align: left;
+  padding: 15px;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 576px) {
+  .etusivu img {
+    display: none;
+  }
+
+  .renkaan-tiedot {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .etusivu img {
+      display: none;
+  }
+
+  .renkaan-tiedot {
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  .renkaan-tiedot {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+  }
 }

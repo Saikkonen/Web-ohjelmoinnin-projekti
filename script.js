@@ -24,25 +24,28 @@ function paivitaSivu(renkaat) {
       var renkaanDiv = document.createElement('div')
       renkaanDiv.classList.add('renkaan-tiedot')
 
+      var tietojenDiv = document.createElement('div')
+      renkaanDiv.appendChild(tietojenDiv)
+
       // Renkaan merkki ja malli <p> tägiin
       var merkkiJaMalli = document.createElement('p')
       merkkiJaMalli.innerHTML = renkaat[i].Merkki + ' ' + renkaat[i].Malli
-      renkaanDiv.appendChild(merkkiJaMalli)
+      tietojenDiv.appendChild(merkkiJaMalli)
 
       // Renkaan tyyppi <p> tägiin
       var tyyppi = document.createElement('p')
       tyyppi.innerHTML = renkaat[i].Tyyppi + 'renkaat'
-      renkaanDiv.appendChild(tyyppi)
+      tietojenDiv.appendChild(tyyppi)
 
       // Renkaan koko <p> tägiin
       var koko = document.createElement('p')
       koko.innerHTML = renkaat[i].Koko
-      renkaanDiv.appendChild(koko)
+      tietojenDiv.appendChild(koko)
 
       // Renkaan hinta <p> tägiin
       var hinta = document.createElement('p')
       hinta.innerHTML = renkaat[i].Hinta + ' €'
-      renkaanDiv.appendChild(hinta)
+      tietojenDiv.appendChild(hinta)
 
       // Renkaan kuva <img> tägiin
       var kuva = document.createElement('img')
