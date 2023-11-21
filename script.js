@@ -1,3 +1,5 @@
+var renkaat
+
 function haeRenkaat() {
   var xhr = new XMLHttpRequest()
   var koko = document.getElementById('renkaanKoko').value
@@ -8,7 +10,7 @@ function haeRenkaat() {
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
-      var renkaat = JSON.parse(xhr.responseText)
+      renkaat = JSON.parse(xhr.responseText)
       paivitaSivu(renkaat)
     }
   }
@@ -56,8 +58,54 @@ function paivitaSivu(renkaat) {
       tuloksetDiv.appendChild(renkaanDiv)
     }
   } else {
-    tuloksetDiv.innerHTML = 'Ei hakutuloksia'
+    // Virhe ilmoitus <div> tägiin
+    var virheIlmoitus = document.createElement('div')
+    virheIlmoitus.classList.add('virhe-ilmoitus')
+    virheIlmoitus.innerHTML = 'Ei hakutuloksia'
+    tuloksetDiv.appendChild(virheIlmoitus)
   }
+}
+
+function sortTires(value) {
+  switch (value) {
+    case 'Valmistaja (A-Z)':
+      renkaat = sortByMerkki(renkaat)
+      paivitaSivu(renkaat)
+      break
+    case 'Valmistaja (Z-A)':
+      paivitaSivu(sortByMerkki(renkaat, 'desc'))
+      break
+    case 'Hinta (Pieni-Suuri)':
+      paivitaSivu(sortByHinta(renkaat))
+      break
+    case 'Hinta (Suuri-Pieni)':
+      paivitaSivu(sortByHinta(renkaat, 'desc'))
+      break
+    default:
+      break
+  }
+}
+
+function sortByHinta(array, sortOrder = 'asc') {
+  const sortedArray = array.slice(0)
+  sortedArray.sort((a, b) => {
+    const hintaA = parseFloat(a.Hinta)
+    const hintaB = parseFloat(b.Hinta)
+    return sortOrder === 'asc' ? hintaA - hintaB : hintaB - hintaA
+  })
+  return sortedArray
+}
+
+function sortByMerkki(array, sortOrder = 'asc') {
+  const sortedArray = array.slice(0)
+  sortedArray.sort((a, b) => {
+    const merkkiA = a.Merkki.toUpperCase()
+    const merkkiB = b.Merkki.toUpperCase()
+    return sortOrder === 'asc'
+      ? merkkiA.localeCompare(merkkiB)
+      : merkkiB.localeCompare(merkkiA)
+  })
+  return sortedArray
 }
 
 // Tehtävänannossa oli todella huonot kuvat niin tein näin
