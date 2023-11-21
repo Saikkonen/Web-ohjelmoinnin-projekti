@@ -66,9 +66,12 @@ nav a:hover {
 }
 
 .etusivu {
-  min-height: 100vh;
-  margin-top: 25vh;
-  margin-left: 20vw;
+  min-height: calc(100vh - 70px);
+  padding: 0px 30px 0px 30px;
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .etusivu h1 {
@@ -81,12 +84,6 @@ nav a:hover {
   margin: 0;
   padding: 0;
   font-size: 20px;
-}
-
-.etusivu img {
-  position: absolute;
-  left: 60vw;
-  top: 25vh;
 }
 
 .button {
@@ -119,33 +116,20 @@ footer {
   justify-content: center;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-th,
-td {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-th {
-  background-color: #f2f2f2;
-}
-
-tr:hover {
-  background-color: #f5f5f5;
-}
-
 .container {
   padding: 50px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+}
+
+img {
+  max-width: 90vw;
+}
+
+iframe {
+  width: 70vw;
+  height: calc(70vw * 9 / 16)
 }
 
 .rounded-image {
@@ -154,16 +138,12 @@ tr:hover {
 }
 
 .verkkokauppa {
-  padding-top: 50px;
+  padding: 50px;
   background-color: var(--blue);
 }
 
-.page-title {
-  color: #333;
-}
-
 .search-form {
-  max-width: 600px;
+  /* max-width: 600px; */
   margin: 20px auto;
   padding: 15px;
   border-radius: 15px;
@@ -178,6 +158,10 @@ tr:hover {
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.sort {
+  width: fit-content;
 }
 
 .search-button {
@@ -202,7 +186,6 @@ tr:hover {
 }
 
 #renkaat {
-  margin: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -225,9 +208,75 @@ tr:hover {
   object-fit: cover;
 }
 
+.virhe-ilmoitus {
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  background-color: red;
+  padding: 10px;
+  border-radius: 15px;
+  border: 2px solid black;
+}
+
 @media screen and (max-width: 576px) {
+  .etusivu {
+    min-height: calc(100vh - 105px);
+  }
+
+  .etusivun-tiedot {
+    text-align: center;
+  }
+
+  .etusivu h1 {
+    font-size: 72px;
+  }
+
+  .etusivu h3 {
+    font-size: 14px;
+  }
+
   .etusivu img {
     display: none;
+  }
+
+  .container {
+    padding: 5vw;
+    display: block;
+    justify-content: space-between;
+  }
+
+  .verkkokauppa {
+    padding: 5vw;
+  }
+
+  iframe {
+    width: 90vw;
+    height: calc(90vw * 9 / 16)
+  }
+
+  .button {
+    font-size: 12px;
+  }
+
+  nav {
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav li {
+    padding: 5px 0;
+  }
+
+  footer {
+    padding: 0px 10px 0px 10px;
+  }
+
+  footer img {
+    width: 80%;
   }
 
   .renkaan-tiedot {
@@ -236,9 +285,24 @@ tr:hover {
   }
 }
 
-@media screen and (min-width: 576px) and (max-width: 768px) {
+@media screen and (min-width: 576px) and (max-width: 940px) {
   .etusivu img {
-      display: none;
+    display: none;
+  }
+
+  .etusivun-tiedot {
+    text-align: center;
+  }
+
+  .container {
+    padding: 5vw;
+    display: block;
+    justify-content: space-between;
+  }
+
+  iframe {
+    width: 90vw;
+    height: calc(90vw * 9 / 16)
   }
 
   .renkaan-tiedot {
@@ -247,7 +311,7 @@ tr:hover {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 940px) {
 
   .renkaan-tiedot {
     width: calc(33.33% - 20px);
