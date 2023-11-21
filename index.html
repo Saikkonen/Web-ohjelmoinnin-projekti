@@ -27,18 +27,20 @@
       </nav>
 
       <div class="etusivu">
-        <h3>Rengaskauppa vuodesta 1999</h3>
-        <h1>Mustat Renkaat</h1>
-        <button onclick="scrollToElement('rengashaku')" class="button">
-          Verkkokauppa
-        </button>
-        <button
-          onclick="location.href='yhteystiedot.html'"
-          class="button"
-          type="button"
-        >
-          Ota yhteyttä
-        </button>
+        <div class="etusivun-tiedot">
+          <h3>Rengaskauppa vuodesta 1999</h3>
+          <h1>Mustat Renkaat</h1>
+          <button onclick="scrollToElement('rengashaku')" class="button">
+            Verkkokauppa
+          </button>
+          <button
+            onclick="location.href='yhteystiedot.html'"
+            class="button"
+            type="button"
+          >
+            Ota yhteyttä
+          </button>
+        </div>
 
         <img
           src="img/rengaskuvat/ES31-kesärengas-HA.png"
@@ -51,7 +53,7 @@
       <div class="content verkkokauppa" id="rengashaku">
         <form class="search-form">
           <h1 class="page-title">Rengashaku</h1>
-          <label for="renkaanKoko">Valitse renkaan koko:</label>
+          <label for="renkaanKoko">Valitse renkaan koko:</label> <br />
           <select name="renkaanKoko" id="renkaanKoko" class="select-box">
             <option value="Kaikki">Kaikki</option>
             <option value="165/55-14">165/55-14</option>
@@ -78,7 +80,7 @@
             <option value="255/50-19">255/50-19</option>
           </select>
           <br />
-          <label for="renkaanTyyppi">Valitse renkaan tyyppi:</label>
+          <label for="renkaanTyyppi">Valitse renkaan tyyppi:</label> <br />
           <select name="renkaanTyyppi" id="renkaanTyyppi" class="select-box">
             <option value="Kaikki">Kaikki</option>
             <option value="Kesä">Kesärenkaat</option>
@@ -89,6 +91,13 @@
           <button type="button" onclick="haeRenkaat()" class="search-button">
             Hae renkaita
           </button>
+          <select onchange="sortTires(this.value)" class="select-box sort">
+            <option value="Järjestä">Järjestä</option>
+            <option value="Valmistaja (A-Z)">Valmistaja (A-Z)</option>
+            <option value="Valmistaja (Z-A)">Valmistaja (Z-A)</option>
+            <option value="Hinta (Pieni-Suuri)">Hinta (Pieni-Suuri)</option>
+            <option value="Hinta (Suuri-Pieni)">Hinta (Suuri-Pieni)</option>
+          </select>
           <br />
         </form>
 
